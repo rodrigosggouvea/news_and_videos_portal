@@ -34,5 +34,9 @@ module NewsAndVideosPortal
     config.generators.stylesheets = false
     config.generators.javascripts = false
     config.generators.helper      = false
+
+    I18n.available_locales = ['pt-BR', 'es-AR']
+    config.time_zone = 'Brasilia'
+    config.i18n.default_locale = 'pt-BR'
   end
 end

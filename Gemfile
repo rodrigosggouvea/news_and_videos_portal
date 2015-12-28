@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'cancancan', '~> 1.10'
 gem 'devise'
+gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 
 group :development, :test do
   gem 'byebug'

@@ -17,8 +17,8 @@ table.table.table-striped
         td= user.id
         td= user.name
         td= user.email
-        td= user.admin
-        td= user.banned
+        td= t('helpers.value_'+user.admin.to_s)
+        td= t('helpers.value_'+user.banned.to_s)
         td=l user.created_at
         - if user != current_user
           td

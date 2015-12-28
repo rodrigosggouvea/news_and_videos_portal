@@ -22,6 +22,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'better_errors'
   gem 'quiet_assets'
+  gem 'shoulda-matchers', '~> 3.0'
 end
 
 group :development do

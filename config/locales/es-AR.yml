@@ -2,10 +2,26 @@
 es-AR:
   activerecord:
     models:
+      news:
+        one: Noticia
+        other: Noticias
+      tag:
+        one: Tag
+        other: Tags
       user:
         one: Usuario
         other: Usuarios
     attributes:
+      news:
+        title_pt: Título en Portugués
+        title_es: Título en Español
+        text_pt: Cuerpo en Português
+        text_es: Cuerpo en Español
+        user_id: Usuario
+        created_at: Se incorporó en
+      tag:
+        name: Nombre
+        locale: Idioma
       user:
         id: Id
         name: Nombre
@@ -156,15 +172,26 @@ es-AR:
         one: "%{model} no pudo guardarse debido a 1 error"
         other: "%{model} no pudo guardarse debido a %{count} errores"
   helpers:
-    value_true: Sí
-    value_false: No
     actions: Acciones
+    destroy: Registro eliminado con éxito
+    links:
+      cancel: Cancelar
+      new: Nuevo
+      edit: Actualizar
+      back: Volver
+      destroy: Borrar
+      confirm: ¿Está seguro?
     select:
       prompt: Por favor selecciona
     submit:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+    titles:
+      new: Crear %{model}
+      edit: Actualizar %{model}
+    value_true: Sí
+    value_false: No
   number:
     currency:
       format:

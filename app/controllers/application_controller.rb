@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_locale
+   respond_to :html
 
   def change_locale
     l = params[:locale].to_s.strip.to_sym

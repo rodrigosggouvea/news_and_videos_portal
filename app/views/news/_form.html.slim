@@ -1,0 +1,9 @@
+= simple_form_for @news, :html => { :class => "form-horizontal" } do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  = f.input :title_pt
+  = f.input :title_es
+  = f.input :text_pt
+  = f.input :text_es
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), news_index_path, :class => 'btn btn-default'

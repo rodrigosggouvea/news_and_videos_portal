@@ -2,10 +2,26 @@
 pt-BR:
   activerecord:
     models:
+      news:
+        one: Notícia
+        other: Notícias
+      tag:
+        one: Tag
+        other: Tags
       user:
         one: Usuário
         other: Usuários
     attributes:
+      news:
+        title_pt: Título em Português
+        title_es: Título em Espanhol
+        text_pt: Corpo em Português
+        text_es: Corpo em Espanhol
+        user_id: Usuário
+        created_at: Cadastrado Em
+      tag:
+        name: Nome
+        locale: Idioma
       user:
         id: Id
         name: Nome
@@ -156,15 +172,26 @@ pt-BR:
         one: 'Não foi possível gravar %{model}: 1 erro'
         other: 'Não foi possível gravar %{model}: %{count} erros'
   helpers:
-    value_true: Sim
-    value_false: Não
     actions: Ações
+    destroy: Registro apagado com sucesso
+    links:
+      cancel: Cancelar
+      new: Novo
+      edit: Atualizar
+      back: Voltar
+      destroy: Apagar
+      confirm: Tem certeza?
     select:
       prompt: Por favor selecione
     submit:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+    titles:
+      new: Criar %{model}
+      edit: Atualizar %{model}
+    value_true: Sim
+    value_false: Não
   number:
     currency:
       format:

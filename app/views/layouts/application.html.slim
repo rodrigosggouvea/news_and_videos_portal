@@ -28,7 +28,7 @@ html lang="en"
           a.navbar-brand href="#"NewsAndVideosPortal
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              - if cookies[:locale] && cookies[:locale] == 'es-AR'
+              - if current_locale == 'es-AR'
                 li= link_to t('menu.languages.pt'), change_locale_path('pt-BR')
               - else
                 li= link_to t('menu.languages.es'), change_locale_path('es-AR')

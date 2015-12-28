@@ -1,2 +1,33 @@
-h1 Users#index
-p Find me in app/views/users/index.html.slim
+- model_class = User
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table.table.table-striped
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:name)
+      th= model_class.human_attribute_name(:email)
+      th= model_class.human_attribute_name(:admin)
+      th= model_class.human_attribute_name(:banned)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @users.each do |user|
+      tr
+        td= user.id
+        td= user.name
+        td= user.email
+        td= user.admin
+        td= user.banned
+        td=l user.created_at
+        - if user != current_user
+          td
+            - if user.admin?
+              = link_to t('.unadmin'), set_admin_user_path(user), method: :post, :class => 'btn btn-xs btn-danger'
+            - else
+              = link_to t('.admin'), set_admin_user_path(user), method: :post, :class => 'btn btn-xs btn-success'
+          td
+            - if user.banned?
+              = link_to t('.unban'), ban_user_path(user), :method => :post, :class => 'btn btn-xs btn-success'
+            - else
+              = link_to t('.ban'), ban_user_path(user), :method => :post, :class => 'btn btn-xs btn-danger'

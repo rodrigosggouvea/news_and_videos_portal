@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228184744) do
+ActiveRecord::Schema.define(version: 20151228195823) do
 
   create_table "news", force: :cascade do |t|
     t.string   "title_pt",   limit: 255
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20151228184744) do
   end
 
   add_index "news", ["user_id"], name: "index_news_on_user_id", using: :btree
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "news_id",    limit: 4
+    t.integer  "tag_id",     limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "taggings", ["news_id"], name: "index_taggings_on_news_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
@@ -54,4 +64,6 @@ ActiveRecord::Schema.define(version: 20151228184744) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "news", "users"
+  add_foreign_key "taggings", "news"
+  add_foreign_key "taggings", "tags"
 end

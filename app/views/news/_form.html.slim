@@ -4,6 +4,8 @@
   = f.input :title_es
   = f.input :text_pt
   = f.input :text_es
+  = f.input :all_tags_pt, placeholder: t('.placeholders.all_tags')
+  = f.input :all_tags_es, placeholder: t('.placeholders.all_tags')
   = f.button :submit, :class => 'btn-primary'
   '
   = link_to t('.cancel', :default => t("helpers.links.cancel")), news_index_path, :class => 'btn btn-default'

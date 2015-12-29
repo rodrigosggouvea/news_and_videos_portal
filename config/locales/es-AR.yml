@@ -19,6 +19,8 @@ es-AR:
         text_es: Cuerpo en Español
         user_id: Usuario
         created_at: Se incorporó en
+        all_tags_pt: Tags (Portugués)
+        all_tags_es: Tags (Español)
       tag:
         name: Nombre
         locale: Idioma
@@ -264,3 +266,7 @@ es-AR:
   users:
     index:
       title: Usuarios
+  news:
+    form:
+      placeholders:
+        all_tags: Tags separados con comas

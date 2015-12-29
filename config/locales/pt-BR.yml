@@ -18,7 +18,9 @@ pt-BR:
         text_pt: Corpo em Português
         text_es: Corpo em Espanhol
         user_id: Usuário
-        created_at: Cadastrado Em
+        created_at: Cadastrado
+        all_tags_pt: Tags (Português)
+        all_tags_es: Tags (Espanhol)
       tag:
         name: Nome
         locale: Idioma
@@ -268,3 +270,7 @@ pt-BR:
   users:
     index:
       title: Usuários
+  news:
+    form:
+      placeholders:
+        all_tags: Tags separados com vírgulas

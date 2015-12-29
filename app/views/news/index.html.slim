@@ -5,8 +5,8 @@ table.table.table-striped
   tbody
     - @news.each do |news|
       tr
-        td=l news.created_at
-        td= link_to news.user.name, news.user
-        td= link_to news.translated_attribute('title', current_locale), news_path(news)
+        td width="20%" =news.created_at
+        td width="10%" = link_to news.user.name, news.user
+        td= link_to translated_attribute(news, 'title', current_locale), news_path(news)
 
 = link_to t('.new', :default => t("helpers.links.new")), new_news_path, :class => 'btn btn-primary'

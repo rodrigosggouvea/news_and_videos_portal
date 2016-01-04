@@ -19,6 +19,7 @@ es-AR:
         locale: Idioma
         moderated: Moderada
         mesage: Mensaje
+        created_at: Se incorporó en
       news:
         title_pt: Título en Portugués
         title_es: Título en Español
@@ -47,6 +48,9 @@ es-AR:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
   comments:
+    index:
+      approve: Aprobar
+      delete: Borrar
     create:
       success: Su comentario ha sido creado, pero sólo aparece después de haber sido aprobada por un moderador.
     update:

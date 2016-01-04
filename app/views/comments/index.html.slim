@@ -1,0 +1,27 @@
+- model_class = Comment
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table.table.table-striped
+  thead
+    tr
+      th
+      th= model_class.human_attribute_name(:created_at)
+      th
+      th= User.human_attribute_name(:name)
+      th= model_class.human_attribute_name(:locale)
+      th= model_class.human_attribute_name(:message)
+      th=t '.actions', :default => t("helpers.actions")
+      th
+  tbody
+    - @comments.each do |comment|
+      tr
+        td= comment.commentable.class.model_name.human.pluralize.titleize
+        td= comment.created_at
+        td= link_to translated_attribute(comment.commentable, 'title', current_locale), comment.commentable
+        td= comment.user.name
+        td= comment.locale
+        td= comment.message
+        td= simple_form_for comment do |f|
+            = f.hidden_field :moderated, value: true
+            = f.submit t('.approve'), class: 'btn btn-xs btn-success'
+        td= link_to t('.delete'), comment, method: :delete, class: 'btn btn-xs btn-danger'

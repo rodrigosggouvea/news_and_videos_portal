@@ -1,0 +1,12 @@
+hr
+h4 = t('helpers.titles.comments')
+- commentable.comments.moderated.of_locale(current_locale).each do |comment|
+
+  p
+    = link_to comment.user.try(:name), home_user_path(comment.user)
+    '
+    small= time_ago_in_words(comment.created_at)
+    br
+    = comment.message
+p
+  = render 'comments/form', commentable: commentable

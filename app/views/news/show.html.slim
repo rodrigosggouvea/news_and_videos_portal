@@ -20,13 +20,4 @@ p
   = translated_attribute(@news, 'text', current_locale)
 
 
-hr
-h4 = t('helpers.titles.comments')
-- @news.comments.moderated.of_locale(current_locale).each do |comment|
-
-  p
-    = comment.user.try(:name)
-    br
-    = comment.message
-p
-  = render 'comments/form', commentable: @news
+= render 'comments/index', commentable: @news

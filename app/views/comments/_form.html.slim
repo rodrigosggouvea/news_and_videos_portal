@@ -1,0 +1,7 @@
+= simple_form_for commentable.comments.build do |f|
+  = f.hidden_field :commentable_id, value: commentable.id
+  = f.hidden_field :commentable_type, value: commentable.class.to_s
+  = f.hidden_field :user_id, value: current_user.id
+  = f.hidden_field :locale, value: current_locale
+  = f.input :message
+  = f.button :submit, :class => 'btn-primary'

@@ -46,6 +46,11 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+  comments:
+    create:
+      success: Seu comentário foi criado, mas só aparecerá depois de ser aprovado por um moderador.
+    update:
+      success: Comentário aprovado
   date:
     abbr_day_names:
     - Dom
@@ -199,6 +204,7 @@ pt-BR:
     titles:
       new: Criar %{model}
       edit: Atualizar %{model}
+      comments: Comentários
     value_true: Sim
     value_false: Não
   number:

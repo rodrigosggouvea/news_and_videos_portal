@@ -10,6 +10,8 @@ class News < ActiveRecord::Base
   validates :text_pt, presence: true
   validates :text_es, presence: true
 
+  accepts_nested_attributes_for :comments
+
   def set_tags(locale, names)
     stripped_names = names.split(",").map{ |name| name.strip }
     new_tags = stripped_names.map do |name|

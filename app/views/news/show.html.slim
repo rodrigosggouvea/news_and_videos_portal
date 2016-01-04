@@ -1,19 +1,32 @@
 - model_class = News
 .page-header
-  h1= translated_attribute(@news, 'title', current_locale)
+  h1
+    = translated_attribute(@news, 'title', current_locale)
+    .pull-right
+      = link_to t('.back', :default => t("helpers.links.back")), news_index_path, :class => 'btn btn-default'
+      '
+      = link_to t('.edit', :default => t("helpers.links.edit")), edit_news_path(@news), :class => 'btn btn-default' if current_user == @news.user
+      '
+      = link_to t('.destroy', :default => t("helpers.links.destroy")), news_path(@news), :method => "delete", :data => { :confirm => t('helpers.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'if current_user == @news.user || current_user.admin?
 
 p
   = "Tags: #{translated_attribute(@news, 'all_tags', current_locale)}"
   br
   = l @news.created_at
   br
-  strong= link_to @news.user.name, user_path(@news.user)
+  strong= link_to @news.user.name, home_user_path(@news.user)
 
 p
   = translated_attribute(@news, 'text', current_locale)
 
-= link_to t('.back', :default => t("helpers.links.back")), news_index_path, :class => 'btn btn-default'
-'
-= link_to t('.edit', :default => t("helpers.links.edit")), edit_news_path(@news), :class => 'btn btn-default' if current_user == @news.user
-'
-= link_to t('.destroy', :default => t("helpers.links.destroy")), news_path(@news), :method => "delete", :data => { :confirm => t('helpers.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'if current_user == @news.user || current_user.admin?
+
+hr
+h4 = t('helpers.titles.comments')
+- @news.comments.moderated.of_locale(current_locale).each do |comment|
+
+  p
+    = comment.user.try(:name)
+    br
+    = comment.message
+p
+  = render 'comments/form', commentable: @news

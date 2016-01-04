@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
-  resources :news
   get '/change_locale/:locale', to: 'application#change_locale', as: :change_locale
-  resources :users, only: [:index, :show] do
+
+  devise_for :users
+
+  resources :comments, only: [:create, :update]
+  resources :news
+  resources :users, only: [:index] do
     member do
+      get :home
       post :ban
       post :set_admin
     end
   end
+
   root 'users#index'
 
-  devise_for :users
 end

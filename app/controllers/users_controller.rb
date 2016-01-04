@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def home
+    @user = User.find params[:id]
+  end
+
   def ban
     @user = User.find(params[:id])
     if @user.banned?

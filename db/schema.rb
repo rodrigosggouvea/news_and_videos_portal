@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228195823) do
+ActiveRecord::Schema.define(version: 20151229130049) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",          limit: 4
+    t.integer  "commentable_id",   limit: 4
+    t.string   "commentable_type", limit: 255
+    t.string   "locale",           limit: 255,                   null: false
+    t.boolean  "moderated",                      default: false, null: false
+    t.text     "message",          limit: 65535,                 null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+  end
+
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "news", force: :cascade do |t|
     t.string   "title_pt",   limit: 255
@@ -63,6 +77,7 @@ ActiveRecord::Schema.define(version: 20151228195823) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "users"
   add_foreign_key "news", "users"
   add_foreign_key "taggings", "news"
   add_foreign_key "taggings", "tags"

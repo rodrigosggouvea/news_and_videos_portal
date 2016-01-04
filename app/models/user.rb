@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   has_many :news
+  has_many :comments
 end

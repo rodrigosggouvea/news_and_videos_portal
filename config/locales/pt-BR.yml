@@ -2,6 +2,9 @@
 pt-BR:
   activerecord:
     models:
+      comment:
+        one: Comentário
+        other: Comentários
       news:
         one: Notícia
         other: Notícias
@@ -12,6 +15,10 @@ pt-BR:
         one: Usuário
         other: Usuários
     attributes:
+      comment:
+        locale: Idioma
+        moderated: Moderado?
+        mesage: Mensagem
       news:
         title_pt: Título em Português
         title_es: Título em Espanhol

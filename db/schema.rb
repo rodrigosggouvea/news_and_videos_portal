@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105185454) do
+ActiveRecord::Schema.define(version: 20160105192042) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20160105185454) do
 
   add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "evaluations", force: :cascade do |t|
+    t.integer  "user_id",       limit: 4
+    t.integer  "gradable_id",   limit: 4
+    t.string   "gradable_type", limit: 255
+    t.integer  "grade",         limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "evaluations", ["gradable_type", "gradable_id"], name: "index_evaluations_on_gradable_type_and_gradable_id", using: :btree
+  add_index "evaluations", ["user_id"], name: "index_evaluations_on_user_id", using: :btree
 
   create_table "news", force: :cascade do |t|
     t.string   "title_pt",   limit: 255
@@ -90,6 +102,7 @@ ActiveRecord::Schema.define(version: 20160105185454) do
   add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
 
   add_foreign_key "comments", "users"
+  add_foreign_key "evaluations", "users"
   add_foreign_key "news", "users"
   add_foreign_key "taggings", "tags"
   add_foreign_key "videos", "users"

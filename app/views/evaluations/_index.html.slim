@@ -1,0 +1,9 @@
+p
+  - if gradable.general_evaluation
+    span= t('helpers.general_evaluation')+': '+gradable.general_evaluation.to_s
+  = simple_form_for(gradable.user_evaluation(current_user), :html => { :class => 'form-inline' }) do |f|
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :gradable_id, value: gradable.id
+    = f.hidden_field :gradable_type, value: gradable.class.to_s
+    = f.input :grade, collection: (1..10)
+    = f.button :submit, class: 'btn btn-success'

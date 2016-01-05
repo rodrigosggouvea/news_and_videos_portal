@@ -5,6 +5,9 @@ es-AR:
       comment:
         one: Comentario
         other: Comentarios
+      evaluation:
+        one: Calificación
+        other: Calificacciones
       news:
         one: Noticia
         other: Noticias
@@ -23,6 +26,8 @@ es-AR:
         moderated: Moderada
         message: Mensaje
         created_at: Se incorporó en
+      evaluation:
+        grade: Tu nota
       news:
         title_pt: Título en Portugués
         title_es: Título en Español
@@ -222,6 +227,7 @@ es-AR:
       comments: Comentarios
     value_true: Sí
     value_false: No
+    general_evaluation: calificación global
   number:
     currency:
       format:
@@ -302,3 +308,8 @@ es-AR:
     form:
       placeholders:
         all_tags: Tags separados con comas
+  evaluations:
+    create:
+      success: Evaluación completado
+    update:
+      success: Evaluación completado

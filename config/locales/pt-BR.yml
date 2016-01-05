@@ -5,6 +5,9 @@ pt-BR:
       comment:
         one: Comentário
         other: Comentários
+      evaluation:
+        one: Avaliação
+        other: Avaliações
       news:
         one: Notícia
         other: Notícias
@@ -23,6 +26,8 @@ pt-BR:
         moderated: Moderado?
         message: Mensagem
         created_at: Cadastrado
+      evaluation:
+        grade: Sua nota
       news:
         title_pt: Título em Português
         title_es: Título em Espanhol
@@ -222,6 +227,7 @@ pt-BR:
       comments: Comentários
     value_true: Sim
     value_false: Não
+    general_evaluation: Avaliação Geral
   number:
     currency:
       format:
@@ -306,3 +312,8 @@ pt-BR:
     form:
       placeholders:
         all_tags: Tags separados com vírgulas
+  evaluations:
+    create:
+      success: Avaliação dada
+    update:
+      success: Avaliação atualizada

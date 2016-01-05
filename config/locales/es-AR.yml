@@ -21,7 +21,7 @@ es-AR:
       comment:
         locale: Idioma
         moderated: Moderada
-        mesage: Mensaje
+        message: Mensaje
         created_at: Se incorporó en
       news:
         title_pt: Título en Portugués

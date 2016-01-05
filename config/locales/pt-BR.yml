@@ -21,7 +21,7 @@ pt-BR:
       comment:
         locale: Idioma
         moderated: Moderado?
-        mesage: Mensagem
+        message: Mensagem
         created_at: Cadastrado
       news:
         title_pt: Título em Português

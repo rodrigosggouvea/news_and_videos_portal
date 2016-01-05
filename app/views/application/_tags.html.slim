@@ -1,0 +1,6 @@
+small
+  = 'Tags:'
+  '
+  - owner.tags.where(locale: current_locale).each do |tag|
+    = link_to tag.name, search_path(search: {q: tag.name})
+    '

@@ -15,4 +15,4 @@ table.table.table-striped
             '
             = "(#{feed.class.model_name.human.titleize} - #{time_ago_in_words(feed.created_at)})"
             br
-            small= "Tags: #{translated_attribute(feed, 'all_tags', current_locale)}"
+            = render 'tags', owner: feed

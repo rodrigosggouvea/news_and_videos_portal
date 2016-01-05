@@ -13,7 +13,7 @@
     '
     small= time_ago_in_words(@video.created_at)
     br
-    small= "Tags: #{translated_attribute(@video, 'all_tags', current_locale)}"
+    = render 'tags', owner: @video
 
 = render 'evaluations/index', gradable: @video
 = embedded_video(@video)

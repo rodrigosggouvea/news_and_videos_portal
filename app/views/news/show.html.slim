@@ -13,7 +13,7 @@
     '
     small= time_ago_in_words @news.created_at
     br
-    small= "Tags: #{translated_attribute(@news, 'all_tags', current_locale)}"
+    = render 'tags', owner: @news
 
 = render 'evaluations/index', gradable: @news
 

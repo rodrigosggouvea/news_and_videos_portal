@@ -1,15 +1,14 @@
-== README
-
-# N&V
-##News and Videos Portal
+== N&V
+=News and Videos Portal
 
 Ruby on Rails App, with MySQL Database.
 
-###To run this on yout machine:
+===To run this on your machine:
 * `bundle install`
 * `Rake db:create`
 * `Rake db:migrate`
 * `Rake db:seed`
 
 then justo go to http://localhost:3000
+
 *hint:* In seeds, there's alerady an Admin user with email `admin.email.com` and password `12345678`

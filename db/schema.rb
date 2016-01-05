@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229130049) do
+ActiveRecord::Schema.define(version: 20160104184619) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -77,8 +77,20 @@ ActiveRecord::Schema.define(version: 20151229130049) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "videos", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "title_pt",   limit: 255
+    t.string   "title_es",   limit: 255
+    t.string   "link",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
+
   add_foreign_key "comments", "users"
   add_foreign_key "news", "users"
   add_foreign_key "taggings", "news"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "videos", "users"
 end

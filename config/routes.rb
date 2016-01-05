@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       post :set_admin
     end
   end
+  resources :videos
 
   root 'users#index'
 

@@ -14,6 +14,9 @@ es-AR:
       user:
         one: Usuario
         other: Usuarios
+      video:
+        one: Video
+        other: Videos
     attributes:
       comment:
         locale: Idioma
@@ -41,6 +44,14 @@ es-AR:
         created_at: Se incorporó en
         admin: Administrador?
         banned: Expulsado?
+      video:
+        title_pt: Título en Portugués
+        title_es: Título en Español
+        user_id: Autor
+        link: Link
+        all_tags_pt: Tags (Portugués)
+        all_tags_es: Tags (Español)
+        created_at: Publicado hace
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

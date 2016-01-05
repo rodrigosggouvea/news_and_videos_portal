@@ -7,7 +7,7 @@ module NewsHelper
     end
   end
 
-  def translated_attribute(object, attribute, locale)
+  def translated_attribute(object, attribute, locale = current_locale)
     if locale == 'pt-BR'
       object.send "#{attribute}_pt"
     else

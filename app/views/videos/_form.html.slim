@@ -1,0 +1,8 @@
+= simple_form_for @video, :html => { :class => "form-horizontal" } do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  = f.input :title_pt
+  = f.input :title_es
+  = f.input :link
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), videos_path, :class => 'btn btn-default'

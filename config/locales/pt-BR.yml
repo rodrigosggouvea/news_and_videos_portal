@@ -14,6 +14,9 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      video:
+        one: Vídeo
+        other: Vídeos
     attributes:
       comment:
         locale: Idioma
@@ -41,6 +44,14 @@ pt-BR:
         created_at: Cadastrado Em
         admin: Administrador?
         banned: Banido?
+      video:
+        title_pt: Título em Português
+        title_es: Título em Espanhol
+        user_id: Autor
+        link: Link
+        all_tags_pt: Tags (Português)
+        all_tags_es: Tags (Espanhol)
+        created_at: Postado a
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

@@ -15,3 +15,4 @@
     small= time_ago_in_words(@video.created_at)
 
 = embedded_video(@video)
+= render 'comments/index', commentable: @video

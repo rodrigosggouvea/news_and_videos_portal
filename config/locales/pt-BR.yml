@@ -302,3 +302,7 @@ pt-BR:
     form:
       placeholders:
         all_tags: Tags separados com vírgulas
+  videos:
+    form:
+      placeholders:
+        all_tags: Tags separados com vírgulas

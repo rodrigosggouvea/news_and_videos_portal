@@ -298,3 +298,7 @@ es-AR:
     form:
       placeholders:
         all_tags: Tags separados con comas
+  videos:
+    form:
+      placeholders:
+        all_tags: Tags separados con comas

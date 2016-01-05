@@ -1,5 +1,5 @@
-== N&V
-=News and Videos Portal
+= N&V
+==News and Videos Portal
 
 Ruby on Rails App, with MySQL Database.
 
@@ -11,4 +11,4 @@ Ruby on Rails App, with MySQL Database.
 
 then justo go to http://localhost:3000
 
-*hint:* In seeds, there's alerady an Admin user with email `admin.email.com` and password `12345678`
+*hint:* In seeds, there's alerady an Admin user with email `admin@email.com` and password `12345678`

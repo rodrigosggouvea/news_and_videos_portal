@@ -304,6 +304,7 @@ es-AR:
     index:
       title: Usuarios
     home:
+      friends: Amigos
       friend: Añadir como amigo
       unfriend: Deshacer la amistad
   news:

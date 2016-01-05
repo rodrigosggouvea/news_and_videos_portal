@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   def is_friends_with?(user)
     friendships.where(target: user).any? || targeted_friendships.where(user: user).any?
   end
+
+  def friends
+    friendships.map(&:target) + targeted_friendships.map(&:user)
+  end
 end

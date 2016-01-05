@@ -7,4 +7,12 @@
           = link_to t('.unfriend'), unfriend_user_path(@user), method: :post, class: 'btn btn-danger'
         - else
           = link_to t('.friend'), friend_user_path(@user), method: :post, class: 'btn btn-success'
-= render 'feed'
+.row
+  .col-sm-9
+    = render 'feed'
+  .col-sm-3
+    .sidebar-module-sidebar-module-inset
+      h4= t '.friends'
+      - @user.friends.each do |friend|
+        span= link_to friend.name, home_user_path(friend)
+

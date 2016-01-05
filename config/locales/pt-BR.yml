@@ -308,6 +308,7 @@ pt-BR:
     index:
       title: Usuários
     home:
+      friends: Amigos
       friend: Adicionar como amigo
       unfriend: Desfazer Amizade
   news:

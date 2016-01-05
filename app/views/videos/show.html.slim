@@ -13,6 +13,8 @@
     = link_to @video.user.try(:name), home_user_path(@video.user)
     '
     small= time_ago_in_words(@video.created_at)
+    '
+    small= "Tags: #{translated_attribute(@video, 'all_tags', current_locale)}"
 
 = embedded_video(@video)
 = render 'comments/index', commentable: @video

@@ -12,7 +12,7 @@
 p
   = "Tags: #{translated_attribute(@news, 'all_tags', current_locale)}"
   br
-  = l @news.created_at
+  = time_ago_in_words @news.created_at
   br
   strong= link_to @news.user.name, home_user_path(@news.user)
 

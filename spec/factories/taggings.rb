@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :tagging do
-    news
+    association :taggable, factory: :news
     tag
   end
 

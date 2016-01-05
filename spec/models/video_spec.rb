@@ -4,8 +4,8 @@ RSpec.describe Video, type: :model do
   context 'Associations' do
     it { is_expected.to belong_to(:user) }
     it { is_expected.to have_many(:comments) }
-    xit { is_expected.to have_many(:taggings) }
-    xit { is_expected.to have_many(:tags) }
+    it { is_expected.to have_many(:taggings) }
+    it { is_expected.to have_many(:tags) }
   end
 
   context 'Validations' do

@@ -1,4 +1,4 @@
 class Tagging < ActiveRecord::Base
-  belongs_to :news
+  belongs_to :taggable, polymorphic: true
   belongs_to :tag
 end

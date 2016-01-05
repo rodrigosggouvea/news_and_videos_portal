@@ -4,7 +4,7 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title= content_for?(:title) ? yield(:title) : "NewsAndVideosPortal"
+    title= content_for?(:title) ? yield(:title) : "N&V"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
@@ -25,18 +25,20 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          = link_to 'NewsAndVideosPortal', root_path, class: 'navbar-brand'
+          = link_to 'N&V', root_path, class: 'navbar-brand'
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               - if current_locale == 'es-AR'
                 li= link_to t('menu.languages.pt'), change_locale_path('pt-BR')
               - else
                 li= link_to t('menu.languages.es'), change_locale_path('es-AR')
-              li= link_to News.model_name.human.pluralize.titleize, news_index_path
-              li= link_to Video.model_name.human.pluralize.titleize, videos_path
-              - if current_user.admin?
-                li= link_to User.model_name.human.pluralize.titleize, users_path
-                li= link_to Comment.model_name.human.pluralize.titleize, comments_path
+              - if current_user
+                li= link_to News.model_name.human.pluralize.titleize, news_index_path
+                li= link_to Video.model_name.human.pluralize.titleize, videos_path
+                - if current_user.admin?
+                  li= link_to User.model_name.human.pluralize.titleize, users_path
+                  li= link_to Comment.model_name.human.pluralize.titleize, comments_path
+                li= link_to t('.sign_out'), destroy_user_session_path(current_user), method: :delete
             = simple_form_for :search, url: search_path, method: :get, html: {class: 'navbar-form navbar-right'} do |f|
               = f.input :q, label: false, placeholder: t('.placeholders.search')
               = f.submit t('.submit.search'), class: 'btn btn-success'

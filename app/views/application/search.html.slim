@@ -1,20 +1,4 @@
 .page-header
   h3= params[:search][:q]
-table.table.table-striped
-  tbody
-    - @feeds.each do |feed|
-      tr
-        - if feed.is_a? User
-          td
-            = link_to feed.name, home_user_path(feed)
-            '
-            = "(#{User.model_name.human.titleize} - #{time_ago_in_words(feed.created_at)})"
-            br
-            = feed.email
-        - else
-          td
-            = link_to translated_attribute(feed, 'title'), feed
-            '
-            = "(#{feed.class.model_name.human.titleize} - #{time_ago_in_words(feed.created_at)})"
-            br
-            small= "Tags: #{translated_attribute(feed, 'all_tags', current_locale)}"
+
+= render 'feed'

@@ -307,6 +307,9 @@ pt-BR:
   users:
     index:
       title: Usuários
+    home:
+      friend: Adicionar como amigo
+      unfriend: Desfazer Amizade
   news:
     form:
       placeholders:
@@ -322,6 +325,7 @@ pt-BR:
       success: Avaliação atualizada
   layouts:
     application:
+      sign_out: Sair
       placeholders:
         search: Nome, usuário, tag
       submit:

@@ -303,6 +303,9 @@ es-AR:
   users:
     index:
       title: Usuarios
+    home:
+      friend: Añadir como amigo
+      unfriend: Deshacer la amistad
   news:
     form:
       placeholders:
@@ -318,6 +321,7 @@ es-AR:
       success: Evaluación completado
   layouts:
     application:
+      sign_out: Salir
       placeholders:
         search: Nombre, usuario, tag
       submit:

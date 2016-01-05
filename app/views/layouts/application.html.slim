@@ -37,6 +37,9 @@ html lang="en"
               - if current_user.admin?
                 li= link_to User.model_name.human.pluralize.titleize, users_path
                 li= link_to Comment.model_name.human.pluralize.titleize, comments_path
+            = simple_form_for :search, url: search_path, method: :get, html: {class: 'navbar-form navbar-right'} do |f|
+              = f.input :q, label: false, placeholder: t('.placeholders.search')
+              = f.submit t('.submit.search'), class: 'btn btn-success'
 
     .container
       .row

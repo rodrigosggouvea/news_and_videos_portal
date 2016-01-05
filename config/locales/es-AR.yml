@@ -293,6 +293,9 @@ es-AR:
       short: "%d de %b a las %H:%M hrs"
     pm: pm
   # VIEWS
+  application:
+    search:
+      title: Busca
   menu:
     languages:
       pt: Português
@@ -313,3 +316,9 @@ es-AR:
       success: Evaluación completado
     update:
       success: Evaluación completado
+  layouts:
+    application:
+      placeholders:
+        search: Nombre, usuario, tag
+      submit:
+        search: Buscar

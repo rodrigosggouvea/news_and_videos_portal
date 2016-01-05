@@ -15,6 +15,7 @@ gem 'twitter-bootstrap-rails'
 gem 'cancancan', '~> 1.10'
 gem 'devise'
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
+gem 'scoped_search'
 
 group :development, :test do
   gem 'byebug'

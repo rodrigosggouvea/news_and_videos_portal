@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/change_locale/:locale', to: 'application#change_locale', as: :change_locale
+  get '/search', to: 'application#search', as: :search
 
   devise_for :users
 
@@ -15,6 +16,6 @@ Rails.application.routes.draw do
   end
   resources :videos
 
-  root 'users#index'
+  root 'videos#index'
 
 end

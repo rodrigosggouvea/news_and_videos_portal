@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     redirect_to request.referer || root_url
   end
 
+  def search
+    @news = News.search_for(params[:search][:q])
+    @videos = Video.search_for(params[:search][:q])
+    @users = User.search_for(params[:search][:q])
+    @feeds = (@news + @videos + @users).sort_by(&:created_at).reverse
+  end
+
   private
 
   def set_locale

@@ -297,6 +297,9 @@ pt-BR:
       short: "%d de %B, %H:%M"
     pm: ''
   # VIEWS
+  application:
+    search:
+      title: Busca
   menu:
     languages:
       pt: Português
@@ -317,3 +320,9 @@ pt-BR:
       success: Avaliação dada
     update:
       success: Avaliação atualizada
+  layouts:
+    application:
+      placeholders:
+        search: Nome, usuário, tag
+      submit:
+        search: Pesquisar

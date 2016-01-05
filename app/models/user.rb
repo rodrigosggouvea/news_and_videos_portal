@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   has_many :news
   has_many :comments
   has_many :evaluations
+
+  scoped_search on: [:name, :email]
 end
